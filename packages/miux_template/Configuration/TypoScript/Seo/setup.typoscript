@@ -76,11 +76,11 @@ plugin.tx_seo {
                 url {
                     pageId = 70
                     fieldToParameterMap {
-                        uid = tx_projects_project[project]
+                        uid = tx_projects_show[project]
                     }
                     additionalGetParameters {
-                        tx_projects_project.controller = Project
-                        tx_projects_project.action = show
+                        tx_projects_show.controller = Project
+                        tx_projects_show.action = show
                     }
                     useCacheHash = 1
                 }

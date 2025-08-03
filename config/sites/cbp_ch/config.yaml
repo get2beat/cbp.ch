@@ -72,7 +72,7 @@ routeEnhancers:
   Project:
     type: Extbase
     extension: Projects
-    plugin: Project
+    plugin: show
     routes:
       -
         routePath: '/{project}'
