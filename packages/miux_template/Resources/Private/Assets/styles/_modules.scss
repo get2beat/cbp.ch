@@ -259,7 +259,6 @@ main > section.m-modul-bildtext {
   .m-modul-galerieslider-normal {
     @apply container;
     @apply mx-auto;
-    @include layout;
   }
 }
 
@@ -279,22 +278,22 @@ main > section.m-modul-bildtext {
 
 
 .m-darken {
+  transition: filter 0.5s ease-in;
   &__active {
     filter: brightness(0.9);
     transition: filter 0.5s ease-out;
   }
-  transition: filter 0.5s ease-in;
 }
 
 .m-modul-accordeon {
   .m-modul-accordeon-header {
+    cursor: pointer;
     h3 {
       padding-top: 1.25rem;
       @screen xl {
         padding-top: 1rem;
       }
     }
-    cursor: pointer;
     .m-icon {
       width: 2rem;
       transition: transform 500ms ease;
@@ -382,7 +381,7 @@ main > section.m-modul-bildtext {
       &.active {
         @apply pb-1;
         @apply text-black;
-        @apply border-b-3;
+        @apply border-b-2;
         @apply border-black;
 
       }
@@ -486,7 +485,9 @@ icons
 
 .m-modul-topslider {
   .m-layout-3 & {
-    @apply m-layout;
+    @screen 3xl {
+      max-width: 1640px;
+    }
   }
 }
 

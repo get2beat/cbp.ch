@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
@@ -5,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 
-import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
+import { ScrollToPlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollToPlugin);
 
 import Masonry from "masonry-layout";

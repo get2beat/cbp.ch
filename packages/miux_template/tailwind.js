@@ -1,0 +1,62 @@
+module.exports = {
+    content: [
+        "./Resources/Private/Extension/**/**/*.html",
+        "./Resources/Private/Extension/**/*.html",
+        "./Resources/Private/Layouts/**/*.html",
+        "./Resources/Private/Partials/**/*.html",
+        "./Resources/Private/Templates/**/*.html",
+        "./ContentBlocks/ContentElements/**/*.html",
+        '../projects/Resources/Private/Templates/**/*.html',
+        '../projects/Resources/Private/Partials/**/*.html',
+        '../projects/Resources/Private/Layouts/**/*.html',
+    ],
+    theme: {
+
+        extend: {
+            screens: {
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                '3xl': '1640px',
+                '4xl': '1640px',
+            },
+            zIndex: {
+                '60': '60',
+                '100': '100',
+            },
+            letterSpacing: {
+                'custom-header': '3px',
+            },
+            fontSize: {
+                xs: ['0.75rem', { lineHeight: '1rem' }],
+                sm: ['0.875rem', { lineHeight: '1.25rem' }],
+                base: ['1rem', { lineHeight: '1.5rem' }],
+                lg: ['1.125rem', { lineHeight: '1.75rem' }],
+                xl: ['1.25rem', { lineHeight: '1.75rem' }],
+                '2xl': ['1.5rem', { lineHeight: '2rem' }],
+                '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+                '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+                '5xl': ['3rem', { lineHeight: '1' }],
+                '6xl': ['3.75rem', { lineHeight: '1' }],
+                '7xl': ['4.5rem', { lineHeight: '1' }],
+                '8xl': ['6rem', { lineHeight: '1' }],
+                '9xl': ['7.5rem', { lineHeight: '1' }],
+                'custom-p': ['1rem', { lineHeight: '1.75rem' }],
+                'custom-header-mobile': ['3.125rem', { lineHeight: '0.94', letterSpacing: '3px'  }],
+                'custom-header': ['7rem', { lineHeight: '1.1', letterSpacing: '3px'  }],
+                'custom-teasertitle': ['2.5rem', { lineHeight: '1' }],
+                'custom-texttitle-mobile': ['2.8rem', { lineHeight: '1.125' }],
+                'custom-texttitle': ['5rem', { lineHeight: '1.2' }],
+                'custom-newsdetailtitle-mobile': ['2.5rem', { lineHeight: '0.94' }],
+                'custom-newsdetailtitle': ['5.625rem', { lineHeight: '1.1' }],
+                'custom-quote-mobile': ['1.43rem', { lineHeight: '1.5' }],
+                'custom-quote': ['2.8rem', { lineHeight: '1.3' }],
+            },
+        },
+    },
+    plugins: [
+        require('@tailwindcss/aspect-ratio'),
+    ],
+}

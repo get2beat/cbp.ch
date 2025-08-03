@@ -205,9 +205,7 @@ page {
 
     }
     includeJSFooter {
-        miuxtemplate_script_manifest = EXT:miux_template/Resources/Public/JavaScript/manifest.js
-        miuxtemplate_script_libraries = EXT:miux_template/Resources/Public/JavaScript/libraries.js
-        miuxtemplate_cript_main = EXT:miux_template/Resources/Public/JavaScript/main.js
+        miuxtemplate_script_main = EXT:miux_template/Resources/Public/JavaScript/main.js
     }
     cssInline.100 = TEXT
     cssInline.100.value (

@@ -3,24 +3,24 @@
    ======================= */
 
 /* Settings */
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 
 /* Reset */
-@import "reset";
+@use "reset";
 
 /* Libraries */
-@import "libraries";
+@use "libraries";
 /* Libraries custom */
-@import "libraries_custom";
+@use "libraries_custom";
 
 /* Base */
-@import "base";
-@import "utilities";
+@use "base";
+@use "utilities";
 
 /* Layout */
-@import "layout";
+@use "layout";
 
 /* Modules */
-@import "modules";
+@use "modules";
 

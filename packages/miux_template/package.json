@@ -1,0 +1,28 @@
+{
+  "name": "site_package",
+  "type": "module",
+  "version": "3.0.0",
+  "author": "marcau",
+  "private": true,
+  "scripts": {
+    "vite": "vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "jquery": "^3.7.1",
+    "postcss": "^8.5.6",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "tailwindcss": "^3.4.17",
+    "vite-plugin-auto-origin": "^1.2.2",
+    "vite-plugin-typo3": "^2.0.2"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "gsap": "^3.13.0",
+    "masonry-layout": "^4.2.2",
+    "imagesloaded": "^5.0.0",
+    "jquery-bridget": "^3.0.1",
+    "swiper": "^11.2.10"
+  }
+}

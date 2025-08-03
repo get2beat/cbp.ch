@@ -1,9 +1,4 @@
 
-@mixin layout {
-  @screen 3xl {
-    max-width: 1640px;
-  }
-}
 
 .m-layout-m  {
   @apply m-6;
@@ -17,10 +12,8 @@
 header,
 .m-layout,
 footer {
-
   @apply container;
   @apply mx-auto;
-  @include layout;
 }
 .m-header {
  .m-logo {
@@ -95,6 +88,8 @@ main > section:last-child {
 }
 
 header, footer{
+  @apply container;
+
 
   @apply px-8;
 
@@ -104,9 +99,9 @@ header, footer{
   }
   @screen xl {
     @apply px-0;
-    @apply mx-16;
+    @apply mx-auto;
   }
-  @include layout;
+
 }
 
 main {
