@@ -248,12 +248,15 @@ main > section.m-modul-bildtext {
     }
   }
   .swiper-pagination {
-    bottom:3rem;
+    bottom:0.1rem;
   }
   .swiper-pagination-bullet {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
   }
+}
+.swiper-button-black {
+  color: #000;
 }
 @screen lg {
   .m-modul-galerieslider-normal {

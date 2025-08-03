@@ -37,22 +37,6 @@ $(function() {
         $(body).removeClass("isMobile").addClass("isDesktop");
     }
 
-    if ($('.swiper-container__fixheight').length) {
-        var width = $('.swiper-container__fixheight .m-slide').width();
-        var setHeight = width / 1.6;
-       // console.log('setHeight', setHeight);
-        $('.swiper-container__fixheight .m-slide__media').height(setHeight);
-    }
-
-    $(window).on('resize', function () {
-        if ($('.swiper-container__fixheight').length) {
-            var width = $('.swiper-container__fixheight .m-slide').width();
-            var setHeight = width / 1.6;
-            $('.swiper-container__fixheight .m-slide__media').height(setHeight);
-        }
-    });
-
-
     $('#hamburger-open').click( function() {
         body.addClass('m-nav-open');
         $('#menu-mobile').show();
@@ -67,6 +51,18 @@ $(function() {
         $('#shareicons').addClass('active');
     });
 
+    function setNavigationTop(swiper) {
+        let slide = swiper.slides[swiper.activeIndex];
+        let img = $(slide).find('img, video');
+
+        if (img.length === 0) return;
+
+        let imgHeight = img.height();
+        let value = imgHeight / 2;
+
+        let button = $(img).closest(".swiper-container").find(".swiper-button-img");
+        button.css('top', value + 'px'); // Korrekte Methode, um Style zu setzen
+    }
 
 
     var galerieSwiper = null;
@@ -176,42 +172,73 @@ $(function() {
 
 
     /* ext:project */
-    var projectSwiper = null;
+    let galerieFixheightSwiper = null;
     //galerie slider
-    if ($('.swiper-container__fixheight').length) {
+    if ($('.m-modul-galerieslider').length) {
+        $( ".m-modul-galerieslider" ).each(function( index ) {
+            let sliderID = $(this).attr('id')
+            galerieFixheightSwiper = new Swiper('.swiper-container__fixheight-'+sliderID, {
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                direction: 'horizontal',
+                loop: false,
+                allowTouchMove: true,
+                //autoHeight: 640,
+                autoplay: {
+                    delay: 4000,
+                },
+                speed: 1500,
+                slidesPerView: 1,
+                breakpoints: {
+                    640: {
+                        pagination: {
+                            el: '.swiper-slider-pagination',
+                            type: 'bullets',
+                            clickable: true
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                    },
+                },
+                lazy: {
+                    // Native Lazy Loading aktivieren
+                    enabled: true,
+                    // Bilder laden, bevor sie sichtbar werden
+                    loadPrevNext: true,
+                    // Anzahl der Bilder vor/nach aktuellem Slide vorladen
+                    loadPrevNextAmount: 1
+                },
+                preloadImages: false,
+                on: {
+                    slideChange: function (swiper) {
+                        $(swiper.slides[swiper.activeIndex]).find('.m-slide__link').show();
+                    },
+                    init: function (swiper) {
+                        if (swiper.slides.length <= 1) {
+                            swiper.params.loop = false;
+                            swiper.params.autoplay = false;
+                            swiper.params.pagination = false;
+                        }
 
-        projectSwiper = new Swiper('.swiper-container__fixheight', {
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            direction: 'horizontal',
-            loop: false,
-            allowTouchMove: true,
-            //autoHeight: 640,
-            autoplay: {
-                delay: 4000,
-            },
-            speed: 1500,
-            slidesPerView: 1,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true
-            },
-            on: {
-                slideChange: function (swiper) {
-                    $(swiper.slides.eq(swiper.previousIndex)).find('.m-slide__link').hide();
-                    $(swiper.slides.eq(swiper.activeIndex)).find('.m-slide__link').show();
+                        setNavigationTop(swiper)
+
+                        $(window).on('orientationchange', function() {
+                            setNavigationTop(swiper)
+                        });
+
+                        $(window).on('resize', function(){
+                            clearTimeout(resizeTimeout);
+                            let resizeTimeout = setTimeout(() => {
+                                setNavigationTop(swiper);
+                            }, 100); // Warte kurz, um zu vermeiden, dass die Funktion zu oft aufgerufen wird
+                        });
+                    },
                 },
-                init: function (swiper) {
-                    if (swiper.slides.length <= 1) {
-                        swiper.params.loop = false;
-                        swiper.params.autoplay = false;
-                        swiper.params.pagination = false;
-                    }
-                },
-            },
+            })
         })
     }
 
