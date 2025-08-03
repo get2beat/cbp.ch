@@ -1,0 +1,53 @@
+<section  class="m-modul-text py-6" style=" {f:if(condition: '{tx_modul_backgroundcolor} == \'color-dunkel\'', then:'color:white; background-color: #111b2b;')}" >
+    <div class="m-text container mx-auto flex justify-center ">
+        <f:if condition="{tx_modul_spalten} == '1'">
+            <f:then>
+                <div class="{tx_modul_backgroundcolor} ">
+                    <f:if condition="{tx_modul_showtitle}">
+                        <f:if condition="{tx_modul_h1} == '1'">
+                            <f:then>
+                                <h1 class="{tx_modul_textposition} text-5xl text-red-500"><f:sanitize.html >{header} (H1)</f:sanitize.html></h1>
+                            </f:then>
+                            <f:else>
+                                <h2 class="{tx_modul_textposition} text-4xl "><f:sanitize.html >{header}</f:sanitize.html></h2>
+                            </f:else>
+                        </f:if>
+                    </f:if>
+                    <f:if condition="{bodytext}">
+                        <div class="{tx_modul_textposition}">
+                            <f:sanitize.html>{bodytext}</f:sanitize.html>
+                            <f:if condition="{tx_modul_link}">
+                                <div class="my-6 p-2 w-24 border border-black">
+                                    <f:if condition="{tx_modul_link_title}">
+                                        <f:then>
+                                            {tx_modul_link_title}
+                                        </f:then>
+                                        <f:else>
+                                            mehr
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:if>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="m-text m-layout mx-auto flex flex-wrap">
+                    <f:if condition="{bodytext}">
+                        <div class="w-full ">
+                            <f:sanitize.html >{bodytext}</f:sanitize.html>
+                        </div>
+                    </f:if>
+                    <f:if condition="{tx_modul_textspalterechts}">
+                        <div class="w-full ">
+                            <f:sanitize.html >{tx_modul_textspalterechts}</f:sanitize.html>
+                        </div>
+                    </f:if>
+                </div>
+            </f:else>
+        </f:if>
+
+    </div>
+</section>
+

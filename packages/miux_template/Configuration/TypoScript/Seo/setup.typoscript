@@ -1,0 +1,106 @@
+
+##########################
+#### tx_seo           ####
+##########################
+
+
+# URL : {domain}/?type=1533906435
+
+plugin.tx_seo {
+  config {
+    xmlSitemap {
+      sitemaps {
+        pages {
+          config {
+			# Folder 254, Recycler 255, Menu Separator 199, BE User Settings 6
+            excludedDoktypes = 254, 255, 199, 6
+            additionalWhere = AND (no_index = 0 OR no_follow = 0)
+          }
+        }
+        jobs {
+          provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+          config {
+              table = tx_news_domain_model_news
+              sortField = sorting
+              lastModifiedField = tstamp
+              # news data
+              pid = 43
+              recursive = 1
+              url {
+                  # news detailpid
+                  pageId = 51
+                  fieldToParameterMap {
+                      uid = tx_news_pi1[news]
+                  }
+                  additionalGetParameters {
+                      tx_news_pi1.controller = News
+                      tx_news_pi1.action = detail
+                  }
+                  useCacheHash = 1
+              }
+          }
+        }
+        /*
+        team {
+          provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+          config {
+              table = tx_news_domain_model_news
+              sortField = sorting
+              lastModifiedField = tstamp
+              # news data
+              pid = 66
+              recursive = 1
+              url {
+                  # news detailpid
+                  pageId = 60
+                  fieldToParameterMap {
+                      uid = tx_news_pi1[news]
+                  }
+                  additionalGetParameters {
+                      tx_news_pi1.controller = News
+                      tx_news_pi1.action = detail
+                  }
+                  useCacheHash = 1
+              }
+          }
+        }
+*/
+        tx_projects {
+            provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+            config {
+                table = tx_projects_domain_model_project
+                sortField = sorting
+                lastModifiedField = tstamp
+                pid = 67
+                recursive = 2
+                url {
+                    pageId = 70
+                    fieldToParameterMap {
+                        uid = tx_projects_project[project]
+                    }
+                    additionalGetParameters {
+                        tx_projects_project.controller = Project
+                        tx_projects_project.action = show
+                    }
+                    useCacheHash = 1
+                }
+            }
+        }
+      }
+    }
+  }
+}
+
+
+# Robots: allow indexing of news records, but set ‘noindex’ to the detail page
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+    page.meta {
+                description >
+                author >
+                keywords >
+                robots = index,follow
+                robots.replace = 1
+            }
+    }
+[global]
+

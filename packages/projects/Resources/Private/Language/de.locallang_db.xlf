@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:projects/Resources/Private/Language/locallang_db" date="2021-01-28T15:02:06Z" product-name="projects">
+		<header/>
+		<body>
+			<trans-unit id="tx_projects_domain_model_project" resname="tx_projects_domain_model_project">
+				<source>Project</source>
+				<target>Projekt</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.topproject" resname="tx_projects_domain_model_project.topproject">
+				<source>Top Projekt</source>
+				<target>Top Projekt</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.onlylist" resname="tx_projects_domain_model_project.onlylist">
+				<source>Only show in Listview</source>
+				<target>Nur in der Liste anzeigen</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.title" resname="tx_projects_domain_model_project.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.projectnumber" resname="tx_projects_domain_model_project.projectnumber">
+				<source>Projectnumber</source>
+				<target>Projektnummer (intern)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.listimage" resname="tx_projects_domain_model_project.listimage">
+				<source>Listimage (overview)</source>
+				<target>Bild (Listenansicht)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.headerimage" resname="tx_projects_domain_model_project.headerimage">
+				<source>Headerimage (detail)</source>
+				<target>Bild (Header Detailansicht)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.period" resname="tx_projects_domain_model_project.period">
+				<source>Period</source>
+				<target>Zeitraum (Bsp. 2010-2012)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.award" resname="tx_projects_domain_model_project.award">
+				<source>Award</source>
+				<target>Auszeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.owner" resname="tx_projects_domain_model_project.owner">
+				<source>Owner</source>
+				<target>Auftraggeber:in</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.year" resname="tx_projects_domain_model_project.year">
+				<source>Year</source>
+				<target>Baujahr</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.copyright" resname="tx_projects_domain_model_project.copyright">
+				<source>Image copyright</source>
+				<target>Foto copyright</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.realization" resname="tx_projects_domain_model_project.realization">
+				<source>Realization</source>
+				<target>Realisierung</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.projectplanning" resname="tx_projects_domain_model_project.projectplanning">
+				<source>Project planning</source>
+				<target>Projektierung</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.partner" resname="tx_projects_domain_model_project.partner">
+				<source>Partner</source>
+				<target>Partner</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.architect" resname="tx_projects_domain_model_project.architect">
+				<source>Architect</source>
+				<target>Architekt</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.description" resname="tx_projects_domain_model_project.description">
+				<source>Description</source>
+				<target>Beschreibung (Detailansicht)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.images" resname="tx_projects_domain_model_project.images">
+				<source>Images (Slider Detailview)</source>
+				<target>Bilder (Slider in Detailansicht)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.images" resname="tx_projects_domain_model_project.images">
+				<source>Images (Optimal: 1.Bild 16/10)</source>
+				<target>Bilder (Optimal: 1.Bild 16/10)</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.area" resname="tx_projects_domain_model_project.area">
+				<source>Bereich</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_area" resname="tx_projects_domain_model_area">
+				<source>Bereich</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_area.area" resname="tx_projects_domain_model_area.area">
+				<source>Area</source>
+				<target>Bereich</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_area.worklist" resname="tx_projects_domain_model_area.worklist">
+				<source>Worklist</source>
+				<target>Werkliste</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_project.name" resname="tx_projects_project.name">
+				<source>project</source>
+				<target>Projekt</target>
+			</trans-unit>
+			<trans-unit id="tx_projects_project.description" resname="tx_projects_project.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchForm.html
+-->
+
+<f:section name="content">
+    <div id="m-form-teamserach-anker" class="news-search-form">
+        <div class="m-layout w-full lg:my-12 px-0 lg:pb-12 lg:flex lg:justify-center ">
+            <div class="m-result-filter">
+                <a href="/buero#m-form-teamserach-anker">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="37.477" height="37.477" viewBox="0 0 37.477 37.477">
+                    <g id="Gruppe_31" data-name="Gruppe 31" transform="translate(-2733.321 -237.941) rotate(-45)">
+                        <line id="Linie_5" data-name="Linie 5" y2="45" transform="translate(1764.5 2105)" fill="none" stroke="#79838c" stroke-linecap="round" stroke-width="4"/>
+                        <line id="Linie_6" data-name="Linie 6" x1="45" transform="translate(1742 2127.5)" fill="none" stroke="#79838c" stroke-linecap="round" stroke-width="4"/>
+                    </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="lg:w-4/6">
+                <f:form id="m-form-teamserach" object="{search}" name="search" pageUid="{settings.listPid}">
+                    <fieldset>
+                        <div class="form-group flex">
+                            <f:form.textfield  class="m-search" id="news-subject" property="subject" placeholder="Mitarbeiter:in suchen" />
+                        </div>
+                    </fieldset>
+                </f:form>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

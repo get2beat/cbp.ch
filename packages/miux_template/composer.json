@@ -1,0 +1,25 @@
+{
+  "name": "miux/miux-template",
+  "type": "typo3-cms-extension",
+  "description": "Configuration for Miux typo3 template",
+  "homepage": "https://cbp.ch/",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "keywords": [
+    "TYPO3 CMS"
+  ],
+  "require": {
+    "typo3/cms-core": "^12.4.2 || ^13.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Miux\\MiuxTemplate\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "miux_template"
+    }
+  }
+}

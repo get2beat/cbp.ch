@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <section class="m-projects-list m-layout">
+        <div class="m-projects-cat">
+            <f:form
+                action="ajaxCall"
+                object="{projects}"
+                name="projects"
+                id="ajaxlist-form">
+                <div class="m-projects-search w-full lg:w-auto lg:my-12 px-0 lg:pb-12 lg:flex lg:justify-center ">
+                    <f:form.textfield class="m-search ajaxFormOption" name="search" value="" placeholder="Projekt suchen" />
+                </div>
+                <div class="m-filter-radio mx-6 mt-4 lg:my-12 lg:px-2 mb-12 flex lg:justify-center">
+                    <f:for each="{kategorien}" as="kat" iteration="iter">
+
+                        <f:form.radio
+                            name="selKategorie"
+                            value="{kat.uid}"
+                            id="check-{iter.index}"
+                            class="ajaxFormOption custom-control-input"
+                            checked="false"/>
+                        <label class="m-menu__item-link block pb-1 mr-4 xl:ml-7 {f:if(condition:'{kat.uid} == 1' , then: 'active',else: 'hover:text-black')}" for="check-{iter.index}">{kat.area}</label>
+
+                    </f:for>
+                </div>
+
+                <f:form.hidden name="action" value="ajaxCall"/>
+                <input type="hidden" name="type" value="8021">
+                <input type="hidden" name="id" value="{currentPageID}">
+                <f:form.hidden name="detailPid" value="{detailPid}" />
+            </f:form>
+        </div>
+
+        <div id="ajaxCallResult"></div>
+
+    </section>
+
+</f:section>
+</html>

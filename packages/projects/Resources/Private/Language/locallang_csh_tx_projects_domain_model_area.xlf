@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:projects/Resources/Private/Language/locallang_csh" date="2021-01-28T15:02:06Z" product-name="projects">
+		<header/>
+		<body>
+			<trans-unit id="area.description" resname="area.description">
+				<source>area</source>
+			</trans-unit>
+			<trans-unit id="worklist.description" resname="worklist.description">
+				<source>worklist</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

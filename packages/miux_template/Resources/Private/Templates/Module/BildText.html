@@ -1,0 +1,85 @@
+<section id="c{data.uid}" class="m-modul-bildtext">
+    <div class="mx-auto flex flex-wrap">
+        <div class="m-modul-bildtext-left w-full sm:w-1/2 lg:w-2/5">
+            <div class="">
+                <f:if condition="{data_tx_modul_bild.1}">
+                    <f:then>
+                        <f:render section="sliderSection" arguments="{imgs: data_tx_modul_bild}" />
+                    </f:then>
+                    <f:else>
+                        <f:render section="imgSection" arguments="{img: data_tx_modul_bild.0}" />
+                    </f:else>
+                </f:if>
+            </div>
+        </div>
+        <div class="w-full {f:if(condition: sm:w-1/2 lg:w-3/5 ">
+            <div class="flex h-full px-4 md:pl-8 xl:pl-48 xl:pr-48">
+                <div class="m-auto w-full">
+                    <f:if condition="{data.tx_modul_showtitle}">
+                        <f:if condition="{data.tx_modul_h1}">
+                            <f:then>
+                                <h1 class="pt-8 sm:p-0">
+                                    <f:format.html parseFuncTSPath="lib.parseFunc">{data.header}</f:format.html>
+                                </h1>
+                            </f:then>
+                            <f:else>
+                                <h2 class="pt-6 sm:p-0">
+                                    <f:format.html parseFuncTSPath="lib.parseFunc">{data.header}</f:format.html>
+                                </h2>
+                            </f:else>
+                        </f:if>
+                    </f:if>
+                    <div class="m-text">
+                        <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                            <f:if condition="{data.tx_modul_link}">
+                                <f:link.typolink parameter="{data.tx_modul_link}">
+                                    <button class="m-button">
+                                        <f:if condition="{data.tx_modul_link_title}">
+                                            <f:then>
+                                                {data.tx_modul_link_title}
+                                            </f:then>
+                                            <f:else>
+                                                weiterlesen
+                                            </f:else>
+                                        </f:if>
+                                    </button>
+                                </f:link.typolink>
+                            </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<f:section name="imgSection">
+        <picture>
+            <source data-variant="desktop" data-maxwidth="1100" media="(min-width: 1024px)"
+                    srcset="{f:uri.image(image: img, maxHeight: '600',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+            <source data-variant="small" data-maxwidth="640"
+                    srcset="{f:uri.image(image: img, maxHeight: '230',cropVariant:'mobile', fileExtension: 'webp')}" type="image/webp">
+            <img class="m-slide__media"
+                 src="{f:uri.image(image: img, cropVariant: 'desktop', maxWidth: 900)}"
+                 title="{img.title}"
+                 alt="{img.title}"
+                 alt="{img.title}"
+            >
+        </picture>
+        <div class="h-10">
+        </div>
+</f:section>
+
+
+<f:section name="sliderSection">
+        <div class="swiper swiper-container swiper-container__fixheight w-full">
+            <div class="swiper-wrapper">
+                <f:for each="{imgs}" as="img" iteration="iterator">
+                    <div class="m-slide swiper-slide flex justify-center">
+                        <f:render section="imgSection" arguments="{img: img}" />
+                    </div>
+                </f:for>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+</f:section>

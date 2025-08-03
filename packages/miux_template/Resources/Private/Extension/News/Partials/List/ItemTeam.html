@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="m-news-item-team has-hover w-full md:w-1/3 p-6 pb-6 xl:p-0 md:pb-6 md:mb-12 revealelem">
+    <div class="relative box-content aspect-w-2 aspect-h-2 {f:if(condition: '{iterator.cycle} % 3', then:'md:mr-8', else:'md:mr-0')} {f:if(condition: '{iterator.cycle} % 2', then:'md:mr-8', else:'md:mr-0')}">
+        <f:if condition="{newsItem.falMedia}">
+            <picture class="{settings.page.animation.news}">
+                <source data-variant="default" data-maxwidth="640" media="(min-width: 1300px)"
+                        srcset="{f:uri.image(image: newsItem.falMedia.0, maxWidth: '800',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                <source data-variant="small" data-maxwidth="256"
+                        srcset="{f:uri.image(image: newsItem.falMedia.0, maxWidth: '400',cropVariant:'mobile', fileExtension: 'webp')}" type="image/webp">
+                <img class="m-team-img object-cover h-full w-full"
+                     src="{f:uri.image(image: newsItem.falMedia.0, cropVariant: 'desktop', maxWidth: 900)}"
+                     title="{newsItem.title}"
+                     alt="{newsItem.title}"
+                >
+            </picture>
+        </f:if>
+        <div class="hidden md:block m-hover p-10 absolute h-full w-full top-0 left-0">
+            <div class="flex flex-col h-full inline-block">
+                <div class="m-leadtext">{newsItem.title}</div>
+                <div class="flex-grow justify-center" itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+                <div class="flex justify-between">
+                    <div class="flex m-text">
+                        <f:if condition="{newsItem.teamemail}">
+                            <f:link.email email="{newsItem.teamemail}" class="text-white hover:text-white" />
+                        </f:if>
+                    </div>
+                    <div class="flex">
+                        <f:if condition="{newsItem.teampdf}">
+                            <f:link.typolink parameter="{newsItem.teampdf}" title="PDF" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30.009" height="35.011" viewBox="0 0 30.009 35.011">
+                                    <path id="Icon_metro-file-pdf" data-name="Icon metro-file-pdf" d="M31.252,9.628a4.546,4.546,0,0,1,.938,1.485,4.509,4.509,0,0,1,.391,1.719V35.339A1.868,1.868,0,0,1,30.7,37.214H4.446a1.868,1.868,0,0,1-1.876-1.876V4.079A1.868,1.868,0,0,1,4.446,2.2H21.952a4.51,4.51,0,0,1,1.719.391,4.546,4.546,0,0,1,1.485.938ZM22.577,4.861v7.346h7.346a2.135,2.135,0,0,0-.43-.8L23.378,5.29a2.134,2.134,0,0,0-.8-.43Zm7.5,29.853V14.707H21.952a1.868,1.868,0,0,1-1.876-1.876V4.7h-15V34.714H30.079ZM20.037,23.128a14.866,14.866,0,0,0,1.641,1.094,19.387,19.387,0,0,1,2.286-.137q2.872,0,3.458.957a.944.944,0,0,1,.039,1.016.056.056,0,0,1-.019.039l-.039.039v.02q-.117.742-1.387.742a8.059,8.059,0,0,1-2.247-.391,14.246,14.246,0,0,1-2.54-1.035,35.18,35.18,0,0,0-7.659,1.622q-2.989,5.119-4.728,5.119a1.136,1.136,0,0,1-.547-.137l-.469-.234q-.019-.02-.117-.1a.807.807,0,0,1-.117-.7,4.243,4.243,0,0,1,1.094-1.788,9.442,9.442,0,0,1,2.579-1.885.285.285,0,0,1,.449.117.113.113,0,0,1,.039.078q1.016-1.661,2.09-3.849A29.819,29.819,0,0,0,15.876,18.6a15.793,15.793,0,0,1-.6-3.116,7.6,7.6,0,0,1,.127-2.491q.215-.781.821-.781h.43a.824.824,0,0,1,.684.293,1.56,1.56,0,0,1,.176,1.329.424.424,0,0,1-.078.156.508.508,0,0,1,.02.156v.586a25.584,25.584,0,0,1-.274,3.751,9.884,9.884,0,0,0,2.852,4.65ZM8.784,31.158q1.016-.469,2.677-3.087a11.137,11.137,0,0,0-1.71,1.641A6.494,6.494,0,0,0,8.784,31.158Zm7.776-17.974a5.809,5.809,0,0,0-.039,2.579q.02-.137.137-.86,0-.059.137-.84a.44.44,0,0,1,.078-.156.056.056,0,0,1-.019-.039.04.04,0,0,0-.01-.029.04.04,0,0,1-.01-.029,1.124,1.124,0,0,0-.254-.7.056.056,0,0,1-.019.039v.039ZM14.137,26.1a28.657,28.657,0,0,1,5.549-1.583,2.947,2.947,0,0,1-.254-.186,3.5,3.5,0,0,1-.313-.264,10.349,10.349,0,0,1-2.481-3.439,26.108,26.108,0,0,1-1.622,3.849q-.586,1.094-.879,1.622Zm12.621-.313q-.469-.469-2.735-.469a7.39,7.39,0,0,0,2.423.547,1.9,1.9,0,0,0,.352-.02q0-.02-.039-.059Z" transform="translate(-2.571 -2.204)" fill="#fff"/>
+                                </svg>
+                            </f:link.typolink>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-news-teaser-mobile md:hidden m-auto w-full mt-4">
+            <div class="m-leadtext">{newsItem.title}</div>
+            <div class="" itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+            <div class="flex justify-between pt-2">
+                <div class="flex m-text">
+                    <f:if condition="{newsItem.teamemail}">
+                        <f:link.email email="{newsItem.teamemail}"/>
+                    </f:if>
+                </div>
+                <div class="flex">
+                    <f:if condition="{newsItem.teampdf}">
+                        <f:link.typolink parameter="{newsItem.teampdf}" title="PDF" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30.009" height="35.011" viewBox="0 0 30.009 35.011">
+                                <path id="Icon_metro-file-pdf" data-name="Icon metro-file-pdf" d="M31.252,9.628a4.546,4.546,0,0,1,.938,1.485,4.509,4.509,0,0,1,.391,1.719V35.339A1.868,1.868,0,0,1,30.7,37.214H4.446a1.868,1.868,0,0,1-1.876-1.876V4.079A1.868,1.868,0,0,1,4.446,2.2H21.952a4.51,4.51,0,0,1,1.719.391,4.546,4.546,0,0,1,1.485.938ZM22.577,4.861v7.346h7.346a2.135,2.135,0,0,0-.43-.8L23.378,5.29a2.134,2.134,0,0,0-.8-.43Zm7.5,29.853V14.707H21.952a1.868,1.868,0,0,1-1.876-1.876V4.7h-15V34.714H30.079ZM20.037,23.128a14.866,14.866,0,0,0,1.641,1.094,19.387,19.387,0,0,1,2.286-.137q2.872,0,3.458.957a.944.944,0,0,1,.039,1.016.056.056,0,0,1-.019.039l-.039.039v.02q-.117.742-1.387.742a8.059,8.059,0,0,1-2.247-.391,14.246,14.246,0,0,1-2.54-1.035,35.18,35.18,0,0,0-7.659,1.622q-2.989,5.119-4.728,5.119a1.136,1.136,0,0,1-.547-.137l-.469-.234q-.019-.02-.117-.1a.807.807,0,0,1-.117-.7,4.243,4.243,0,0,1,1.094-1.788,9.442,9.442,0,0,1,2.579-1.885.285.285,0,0,1,.449.117.113.113,0,0,1,.039.078q1.016-1.661,2.09-3.849A29.819,29.819,0,0,0,15.876,18.6a15.793,15.793,0,0,1-.6-3.116,7.6,7.6,0,0,1,.127-2.491q.215-.781.821-.781h.43a.824.824,0,0,1,.684.293,1.56,1.56,0,0,1,.176,1.329.424.424,0,0,1-.078.156.508.508,0,0,1,.02.156v.586a25.584,25.584,0,0,1-.274,3.751,9.884,9.884,0,0,0,2.852,4.65ZM8.784,31.158q1.016-.469,2.677-3.087a11.137,11.137,0,0,0-1.71,1.641A6.494,6.494,0,0,0,8.784,31.158Zm7.776-17.974a5.809,5.809,0,0,0-.039,2.579q.02-.137.137-.86,0-.059.137-.84a.44.44,0,0,1,.078-.156.056.056,0,0,1-.019-.039.04.04,0,0,0-.01-.029.04.04,0,0,1-.01-.029,1.124,1.124,0,0,0-.254-.7.056.056,0,0,1-.019.039v.039ZM14.137,26.1a28.657,28.657,0,0,1,5.549-1.583,2.947,2.947,0,0,1-.254-.186,3.5,3.5,0,0,1-.313-.264,10.349,10.349,0,0,1-2.481-3.439,26.108,26.108,0,0,1-1.622,3.849q-.586,1.094-.879,1.622Zm12.621-.313q-.469-.469-2.735-.469a7.39,7.39,0,0,0,2.423.547,1.9,1.9,0,0,0,.352-.02q0-.02-.039-.059Z" transform="translate(-2.571 -2.204)" fill="#79838C"/>
+                            </svg>
+                        </f:link.typolink>
+                    </f:if>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+

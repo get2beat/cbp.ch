@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:projects/Resources/Private/Language/locallang_csh" date="2021-01-28T15:02:06Z" product-name="projects">
+		<header/>
+		<body>
+			<trans-unit id="topproject.description" resname="topproject.description">
+				<source>topproject</source>
+			</trans-unit>
+			<trans-unit id="title.description" resname="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="title.description" resname="projectnumber.description">
+				<source>projectnumber</source>
+			</trans-unit>
+			<trans-unit id="teaser.description" resname="teaser.description">
+				<source>teaser</source>
+			</trans-unit>
+			<trans-unit id="listimage.description" resname="listimage.description">
+				<source>listimage</source>
+			</trans-unit>
+			<trans-unit id="period.description" resname="period.description">
+				<source>period</source>
+			</trans-unit>
+			<trans-unit id="award.description" resname="award.description">
+				<source>award</source>
+			</trans-unit>
+			<trans-unit id="owner.description" resname="owner.description">
+				<source>owner</source>
+			</trans-unit>
+			<trans-unit id="architect.description" resname="architect.description">
+				<source>architect</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="area.description" resname="area.description">
+				<source>area</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

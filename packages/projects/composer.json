@@ -1,0 +1,31 @@
+{
+    "name": "miux/projects",
+    "type": "typo3-cms-extension",
+	"description": "Configuration for CBP Projects",
+	"homepage": "https://cbp.ch/",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"keywords": [
+		"TYPO3 CMS"
+	],
+    "authors": [
+        {
+            "name": "Beat Hausheer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+		"typo3/cms-core": "^12.4.2 || ^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Miux\\Projects\\": "Classes"
+        }
+    },
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "projects"
+		}
+	}
+}

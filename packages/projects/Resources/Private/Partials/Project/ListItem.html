@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!-- teaser -->
+<h3 class="m-relatedProject text-4xl uppercase mb-8">Weitere Referenzprojekte</h3>
+<div class="revealcontainer mt-4">
+    <div class="flex flex-wrap">
+        <f:for each="{project.relatedProject}" as="relatedProject" iteration="iterator">
+            <f:if condition="{relatedProject.onlylist}">
+                <f:then>
+                    <div class="m-teaser w-1/2 pr-2">
+                        <div class="relative pb-2/3 {f:if(condition:iterator.isOdd, then: 'mr-4')}">
+                            <picture>
+                                <source data-variant="default" data-maxwidth="640" media="(min-width: 1500px)"
+                                        srcset="{f:uri.image(image: project.listimage, maxWidth: '800',cropVariant:'liste', fileExtension: 'webp')}" type="image/webp">
+                                <source data-variant="small" data-maxwidth="256"
+                                        srcset="{f:uri.image(image: project.listimage, maxWidth: '400',cropVariant:'liste', fileExtension: 'webp')}" type="image/webp">
+                                <img class="md:absolute md:h-full md:w-full md:object-cover"
+                                     src="{f:uri.image(image: project.listimage, cropVariant: 'liste', maxWidth: 900)}"
+                                     title="{newsItem.title}"
+                                     alt="{newsItem.title}"
+                                     >
+                            </picture>
+                            <div class="m-hover absolute w-full h-full top-0 left-0 bg-blue-primary bg-opacity-70 text-white p-8">
+                                <div class="relative">
+                                    <p class="font-bold text-xl uppercase"><f:if condition="{relatedProject.place}">{relatedProject.place}</f:if></p>
+                                    <h3 class="text-4xl uppercase ">{relatedProject.title}</h3>
+                                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{relatedProject.teaser}</f:format.html>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="m-teaser has-detail pl-2 w-1/2 ">
+                        <div class="relative pb-2/3 {f:if(condition:iterator.isOdd, then: 'mr-4')}">
+                            <f:link.action action="show" arguments="{project : relatedProject}">
+                                <picture>
+                                    <source data-variant="default" data-maxwidth="640" media="(min-width: 1500px)"
+                                            srcset="{f:uri.image(image: project.listimage, maxWidth: '800',cropVariant:'liste', fileExtension: 'webp')}" type="image/webp">
+                                    <source data-variant="small" data-maxwidth="256"
+                                            srcset="{f:uri.image(image: project.listimage, maxWidth: '400',cropVariant:'liste', fileExtension: 'webp')}" type="image/webp">
+                                    <img class="md:absolute md:h-full md:w-full md:object-cover"
+                                         src="{f:uri.image(image: project.listimage, cropVariant: 'liste', maxWidth: 900)}"
+                                         title="{newsItem.title}"
+                                         alt="{newsItem.title}"
+                                         >
+                                </picture>
+                                <div class="m-hover absolute w-full h-full top-0 left-0 bg-blue-primary bg-opacity-70 text-white">
+                                    <div class="absolute top-0 left-0 bottom-0 right-0 m-8">
+                                        <p class="font-bold text-xl uppercase"><f:if condition="{relatedProject.place}">{relatedProject.place}</f:if></p>
+                                        <h3 class="text-4xl uppercase">{relatedProject.title}</h3>
+                                        <img class="absolute left-0 bottom-0 w-1/3" alt="" src="/typo3conf/ext/t3template/Resources/Public/Images/arrow-long.svg" />
+                                    </div>
+                                </div>
+                            </f:link.action>
+                        </div>
+                    </div>
+                </f:else>
+            </f:if>
+        </f:for>
+    </div>
+</div>
+</html>

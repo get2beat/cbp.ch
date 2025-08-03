@@ -1,0 +1,121 @@
+/*
+<link rel="stylesheet" href="https://use.typekit.net/tyv4puf.css">
+
+Interstate Condensed Thin
+font-family: interstate-condensed, sans-serif;
+font-weight: 200;
+font-style: normal;
+
+Interstate Condensed Extra Light
+font-family: interstate-condensed, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Interstate Condensed Light
+font-family: interstate-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Interstate Condensed Bold
+font-family: interstate-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+color
+dunkel 65, 70, 75 ,  #41464B
+mittel 121, 131, 140 , #79838C
+hell 231, 236, 240 , #79838C
+*/
+
+
+// H1 Grosser Titel, Footer, Suche
+.m-h1 {
+  //font-size: 3.25rem; // 52px
+  font-size: 2.5rem; // 52px
+  line-height:2.75rem;
+  @screen xl {
+    font-size:5.625rem; // 90px
+    line-height:6.5rem;
+  }
+}
+// H2 Grosser Titel, Footer, Suche, Akkordeontitel
+.m-h2 {
+  font-size: 2rem;
+  line-height:2.25rem;
+  @screen 2xl {
+    font-size: 3.75rem; // 60px
+    line-height:4rem;
+  }
+}
+// H3 Titel, Logo & Navigation
+.m-h3 {
+  font-size: 2.1rem;
+  line-height:2.75rem;
+  @screen 2xl {
+    font-size: 3.125rem;
+    line-height:3.5rem;
+  }
+}
+// H4 Titel, Übertitel Aufzählung auf Projektseite rechts
+.m-h4 {
+  font-size: 1.25rem;
+  line-height:1.65rem;
+  font-weight: 700;
+  color: rgb(65, 70, 75);
+  @screen 2xl {
+    font-size: 1.75rem;
+    line-height:2.25rem;
+  }
+}
+.m-menu-nav {
+  font-size: 1.5rem;
+  line-height:2rem;
+  @screen xl {
+    font-size: 2.5rem;
+    line-height:2.75rem;
+  }
+}
+
+// Lauftext , Adresse Footer
+.m-text {
+  font-size: 1.25rem;
+  line-height: 1.7rem;
+  @screen xl {
+    font-size: 1.75rem; //28px
+    line-height: 2.5rem;
+  }
+}
+//Lead Leadtexte, Filter, Aufzählung auf Projektseite rechts
+.m-leadtext {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  @screen xl {
+    font-size: 2.5rem; // 40px
+    line-height: 3rem;
+  }
+}
+
+.m-button {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+  @apply py-2;
+  @apply pr-5;
+  @apply mt-8;
+  @apply underline;
+
+  @screen md {
+    @apply mt-8;
+  }
+  @screen xl {
+    @apply py-3;
+    @apply pr-6;
+    @apply mt-9;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+}
+
+.cc-compliance {
+  background-color: #79838c;
+}

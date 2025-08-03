@@ -1,0 +1,72 @@
+<section id="c{data.uid}" class="m-modul-bildtext p-6" style="{f:if(condition: '{data.tx_modul_backgroundcolor} == \'color-dunkel\'', then:'color:white; background-color: #111b2b;')}">
+    <f:if condition="{data.tx_modul_bildposition} == 1">
+        <f:then>
+            <div class="m-layout mx-auto flex flex-wrap">
+                <div class="m-modul-bildtext-left w-full {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'sm:w-1/2 lg:w-3/5', else:'sm:w-1/2 lg:w-2/5')}">
+                    <div class="">
+                        <f:if condition="{data.assets.0}">
+                            <f:media file="{data.assets.0}" width="200" />
+                        </f:if>
+                    </div>
+                </div>
+                <div class="w-full {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'sm:w-1/2 lg:w-2/5', else:'sm:w-1/2 lg:w-3/5')} ">
+                    <div class="flex h-full px-0 md:pl-8 {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'xl:pl-36', else:'xl:pl-48 xl:pr-24')}">
+                        <div class="m-auto w-full">
+                            <f:if condition="{data.tx_modul_showtitle}">
+                                <f:if condition="{data.tx_modul_h1}">
+                                    <f:then>
+                                        <h1 class="text-red-500">
+                                            <f:sanitize.html >{data.header}</f:sanitize.html>
+                                        </h1>
+                                    </f:then>
+                                    <f:else>
+                                        <h2 class="pt-6 sm:p-0">
+                                            <f:sanitize.html >{data.header}</f:sanitize.html>
+                                        </h2>
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                            <div class="m-text">
+                                <f:sanitize.html >{data.bodytext}</f:sanitize.html>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="m-layout mx-auto flex flex-wrap-reverse sm:flex-wrap">
+                <div class="m-modul-bildtext-right {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'sm:w-1/2 lg:w-2/5', else:'sm:w-1/2 lg:w-3/5')} pr-8 sm:pr-0">
+                    <div class="flex h-full px-0 md:pr-8 {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'xl:pr-12', else:'xl:pl-48 xl:pr-24')}">
+                        <div class="m-auto w-full">
+                            <f:if condition="{data.tx_modul_showtitle}">
+                                <f:if condition="{data.tx_modul_h1}">
+                                    <f:then>
+                                        <h1 class="text-red-500">
+                                            <f:sanitize.html >{data.header}</f:sanitize.html>
+                                        </h1>
+                                    </f:then>
+                                    <f:else>
+                                        <h2 class="pt-6 sm:p-0">
+                                            <f:sanitize.html >{data.header}</f:sanitize.html>
+                                        </h2>
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                            <div class="m-text">
+                                <f:sanitize.html >{data.bodytext}</f:sanitize.html>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full {f:if(condition: '{data.tx_modul_bilddimension} == \'gross\'', then:'sm:w-1/2 lg:w-3/5', else:'sm:w-1/2 lg:w-2/5')}">
+                    <div class="p-0">
+                        <f:if condition="{data.assets.0}">
+                            <f:media file="{data.assets.0}" width="200" />
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+</section>

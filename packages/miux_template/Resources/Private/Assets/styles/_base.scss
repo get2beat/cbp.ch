@@ -1,0 +1,119 @@
+/* @import must be at top of file, otherwise CSS will not work */
+/*
+<link rel="stylesheet" href="https://use.typekit.net/tyv4puf.css">
+
+Interstate Condensed Thin
+font-family: interstate-condensed, sans-serif;
+font-weight: 200;
+font-style: normal;
+
+Interstate Condensed Extra Light
+font-family: interstate-condensed, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Interstate Condensed Light
+font-family: interstate-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Interstate Condensed Bold
+font-family: interstate-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+color
+dunkel 65, 70, 75 ,  #41464B
+mittel 121, 131, 140 , #79838C
+hell 231, 236, 240 , #79838C
+*/
+
+
+html {
+  scroll-behavior: smooth;
+  hyphens: none;
+}
+body {
+  background-color: white;
+  font-family: interstate-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(121, 131, 140); //mittel
+  @apply m-text;
+}
+b, strong {
+  font-weight: 700;
+}
+
+main img {
+  width: 100%;
+}
+
+main {
+  h1 {
+    @apply m-h1;
+  }
+  h2 {
+    @apply m-h2;
+  }
+  h3 {
+    @apply m-h3;
+  }
+  h4 {
+    @apply m-h4;
+  }
+
+  button:focus {outline:0;}
+  button:focus, button:active:focus, button.active:focus {
+    outline: none !important;
+    outline-style: none !important;
+  }
+}
+
+/* editor h2/h3 */
+.m-text > h2:not(:first-child) {
+  margin-top: 2rem;
+}
+.m-text > h3:not(:first-child) {
+  margin-top: 2rem;
+}
+
+main p, footer p {
+  @apply mt-3;
+  @apply text-custom-p;
+  @apply m-text;
+
+  @screen xl {
+    @apply mt-6;
+  }
+}
+main .m-text, .m-content, footer {
+  a {
+    @apply underline;
+    &:hover {
+      color: rgb(65, 70, 75);
+    }
+  }
+}
+// Lead Leadtexte, Filter, Aufzählung auf Projektseite rechts
+main .m-lead {
+  @apply mt-3;
+  @apply m-leadtext;
+
+  @screen xl {
+    @apply mt-6;
+
+  }
+}
+
+main {
+  ul,ol {
+    list-style-position: outside;
+    list-style-type: disc;
+    padding-left: 20px;
+    li {
+      list-style-type: "- ";
+      @apply m-text;
+    }
+  }
+}

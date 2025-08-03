@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:projects/Resources/Private/Language/locallang" date="2021-01-28T15:02:06Z" product-name="projects">
+		<header/>
+		<body>
+			<trans-unit id="tx_projects_domain_model_project" resname="tx_projects_domain_model_project">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.onlylist" resname="tx_projects_domain_model_project.onlylist">
+				<source>Only show in Listview</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.topproject" resname="tx_projects_domain_model_project.topproject">
+				<source>Top Project</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.title" resname="tx_projects_domain_model_project.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.projectnumber" resname="tx_projects_domain_model_project.projectnumber">
+				<source>Projectnumber</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.teaser" resname="tx_projects_domain_model_project.teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.listimage" resname="tx_projects_domain_model_project.listimage">
+				<source>Listimage</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.images" resname="tx_projects_domain_model_project.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.period" resname="tx_projects_domain_model_project.period">
+				<source>Period</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.award" resname="tx_projects_domain_model_project.award">
+				<source>Award</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.owner" resname="tx_projects_domain_model_project.owner">
+				<source>Owner</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.architect" resname="tx_projects_domain_model_project.architect">
+				<source>Architect</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.description" resname="tx_projects_domain_model_project.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_project.area" resname="tx_projects_domain_model_project.area">
+				<source>Bereich</source>
+			</trans-unit>
+
+			<trans-unit id="tx_projects_domain_model_area" resname="tx_projects_domain_model_area">
+				<source>Bereich</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_area.area" resname="tx_projects_domain_model_area.area">
+				<source>Bereich</source>
+			</trans-unit>
+			<trans-unit id="tx_projects_domain_model_area.worklist" resname="tx_projects_domain_model_area.worklist">
+				<source>Description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

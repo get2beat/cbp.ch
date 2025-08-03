@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+
+<footer class="relative">
+    <div id="m-footer" class="h-screen flex justify-center items-center">
+        <div class="w-full xl:w-5/6 my-12 xl:my-24">
+            <div class="m-address-1 w-full pb-12 xl:pb-24">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{settings.rootPageId}', colPos: '11', slide: '-1'}" />
+            </div>
+            <div class="m-address-2 md:flex">
+                <div class="w-full md:w-1/3 mt-12 md:mt-6 xl:mt-0">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{settings.rootPageId}', colPos: '10', slide: '-1'}" />
+                </div>
+                <div class="w-full md:w-1/3 ">
+                    <p class="">
+                        <f:for each="{footernavigation}" as="footernavigationItem">
+                            <a class="block" href="{footernavigationItem.link}" {f:if(condition:footernavigationItem.target, then: ' target="{footernavigationItem.target}"')} title="{footernavigationItem.title}">
+                            {footernavigationItem.title}
+                            </a>
+                        </f:for>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="m-ie absolute top-0 left-0 w-full p-8 text-center text-white z-50">
+    <p>Ihr Browser (IE 11) ist leider zu alt und wird nicht mehr unterstützt.</p>
+</div>
+
+</html>

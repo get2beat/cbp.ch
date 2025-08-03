@@ -1,0 +1,31 @@
+#typo3-login-form button {
+    background-color:#f80;
+}
+.topbar-header-site-logo img{
+    height:35px;
+    display: inline-block;
+}
+.t3-gridCell-width2 {
+    width: 75% !important;
+}
+
+.t3-gridCell-width1 {
+    width: 25% !important;
+}
+/* container-schmal */
+.t3-gridCell-width12 {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    background-color: rgba(11, 50, 68, 0.45);
+}
+
+.ck-editor__editable_inline,
+.element-preview-content {
+    ul {
+        list-style-type: disc !important;
+        padding-left: 1rem !important;
+    }
+    .m-bild > video {
+        width: 100%;
+    }
+}

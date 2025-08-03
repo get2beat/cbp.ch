@@ -1,0 +1,3 @@
+@import 'EXT:miux_template/Configuration/TsConfig/Page/All.tsconfig'
+@import 'EXT:miux_template/Configuration/TsConfig/Page/NewContentElementWizard.tsconfig'
+@import 'EXT:miux_template/Configuration/TsConfig/Page/BackendPreview.tsconfig'

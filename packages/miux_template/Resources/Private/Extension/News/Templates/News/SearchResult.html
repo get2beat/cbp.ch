@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchResult.html
+-->
+
+<f:section name="content">
+
+		<f:if condition="{search}">
+            <section id="news-search-result" class="m-news-searchlist container mx-auto">
+                <f:if condition="{news}">
+                    <f:then>
+                        <div class="m-layout mx-auto flex flex-wrap xl:-mx-1 {f:if(condition: '{settings.page.animation.news}', then:'animationcontainer')}">
+                            <f:for each="{news}" as="newsItem">
+                                <f:render partial="List/ItemTeam" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                            </f:for>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="no-news-found py-24 m-layout mx-auto lg:flex lg:justify-center">
+                            <div class="lg:w-4/6">
+                                <f:translate key="search-noresult" />
+                            </div>
+                        </div>
+                    </f:else>
+                </f:if>
+            </section>
+		</f:if>
+
+</f:section>
+</html>

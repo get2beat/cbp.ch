@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<article class="m-modul-accordeon border-b-2 border-mittel pt-1 pb-6 md:pt-4 xl:pb-12 xl:pt-8 {f:if(condition:iter.isFirst, then: 'border-t-2')}">
+    <div class="m-modul-accordeon-header flex justify-between items-center cursor-pointer select-none">
+        <h3 class="">{newsItem.title}</h3>
+        <div class="m-icon mt-4 w-8 h-8 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49">
+                <g id="Gruppe_14" data-name="Gruppe 14" transform="translate(-1740 -2103)">
+                    <line id="Linie_5" data-name="Linie 5" y2="45" transform="translate(1764.5 2105)" fill="none" stroke="#79838c" stroke-linecap="round" stroke-width="4"/>
+                    <line id="Linie_6" data-name="Linie 6" x1="45" transform="translate(1742 2127.5)" fill="none" stroke="#79838c" stroke-linecap="round" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class='m-content-wrapper'>
+        <div class="m-content">
+            <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{newsItem.teaser}</f:format.html>
+        </div>
+    </div>
+</article>
+

@@ -1,0 +1,130 @@
+
+@mixin layout {
+  @screen 3xl {
+    max-width: 1640px;
+  }
+}
+
+.m-layout-m  {
+  @apply m-6;
+  @screen md {
+    @apply m-0;
+    max-width: 1676px;  //+36px
+    margin-left: 36px;
+  }
+}
+
+header,
+.m-layout,
+footer {
+
+  @apply container;
+  @apply mx-auto;
+  @include layout;
+}
+.m-header {
+ .m-logo {
+   height: 2.2rem;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   @screen md {
+     margin-top: 4.5rem;
+     margin-bottom: 4rem;
+   }
+   @screen xl {
+     height: 2.4rem;
+     margin-top: 4.5rem;
+     margin-bottom: 4rem;
+   }
+ }
+}
+
+img:not(.m-team-img):not(.m-bildtext-img) {
+  filter: grayscale(100%);
+  &:hover {
+    filter:none;
+  }
+}
+
+main > section:first-child:not(.swiper-container__header):not(.news-detail-header):not(.m-modul-topslider):not(.m-cbp-header):not(.m-news-list-accordion)  {
+  @apply px-6;
+
+  @screen md {
+    @apply mt-0;
+    @apply pt-24;
+  }
+}
+main > section:not(.m-modul-trennlinie):not(.m-news-list):not(.m-modul-header):not(.m-table):not(.m-cbp-header):not(.m-projects-list):not(.m-news-list-accordion):not(.m-modul-text) {
+  @apply px-6;
+  @apply py-12;
+  @screen xl {
+    @apply pt-24;
+    @apply pb-28;
+  }
+}
+main > section.m-news-list-accordion{
+  @apply px-6;
+  @apply py-12;
+  @screen xl {
+    @apply pt-8;
+    @apply pb-8;
+  }
+}
+main > section.m-modul-text{
+  @apply px-6;
+  @apply py-12;
+  @screen xl {
+    @apply pt-10;
+    @apply pb-10;
+  }
+}
+main > section.m-modul-header {
+  @apply px-6;
+}
+
+main > section.m-table {
+  @apply px-6;
+  @apply py-12;
+}
+
+main > section:last-child {
+  @apply pb-24;
+  @screen xl {
+    @apply pb-48;
+  }
+}
+
+header, footer{
+
+  @apply px-8;
+
+  @screen md {
+    @apply px-4;
+    @apply mx-0;
+  }
+  @screen xl {
+    @apply px-0;
+    @apply mx-16;
+  }
+  @include layout;
+}
+
+main {
+  /* fluid Styled content */
+  .m-header-2.ce-headline-center {
+      @apply text-center;
+      @apply pl-0;
+  }
+}
+
+footer {
+  .m-address-1 {
+    h2 {
+      @apply m-h1;
+      color: rgb(65, 70, 75);
+    }
+    p {
+      @apply m-h1;
+    }
+  }
+}

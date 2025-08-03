@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:switch expression="{settings.templateLayout}">
+    <f:case value="1">
+        <section class="m-news-list container mx-auto">
+            <div class="m-layout mx-auto flex flex-wrap xl:-mx-1 {f:if(condition: '{settings.page.animation.news}', then:'animationcontainer')}">
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/ItemQuadrat" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                </f:for>
+            </div>
+        </section>
+    </f:case>
+    <f:case value="2">
+        <section class="m-news-list container mx-auto">
+            <div class="m-layout mx-auto flex flex-wrap md:-mx-1 {f:if(condition: '{settings.page.animation.news}', then:'animationcontainer')}">
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/ItemQuer" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                </f:for>
+            </div>
+        </section>
+    </f:case>
+    <f:case value="3">
+        <section class="m-news-list-accordion container mx-auto">
+            <div class="m-layout mx-auto flex justify-center">
+                <div class="w-full xl:w-5/6">
+                    <f:for each="{news}" as="newsItem" iteration="iter">
+                        <f:render partial="List/ItemAccordion" arguments="{newsItem: newsItem,settings:settings,iter:iter}" />
+                    </f:for>
+                </div>
+            </div>
+        </section>
+    </f:case>
+    <f:case value="4">
+        <section class="m-news-list container mx-auto">
+            <div class="m-layout mx-auto flex flex-wrap xl:-mx-1 {f:if(condition: '{settings.page.animation.news}', then:'animationcontainer')}">
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/ItemTeam" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                </f:for>
+            </div>
+        </section>
+    </f:case>
+    <f:defaultCase>
+        <section class="container mx-auto">
+            <div class="flex flex-wrap justify-center xl:-mx-1 revealcontainer">
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                </f:for>
+            </div>
+        </section>
+    </f:defaultCase>
+</f:switch>
+
+</html>

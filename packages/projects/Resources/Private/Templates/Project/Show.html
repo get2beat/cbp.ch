@@ -1,0 +1,173 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <!-- text detail -->
+    <div class="m-project-headerimage m-cbp-header m-layout">
+        <div class="m-grid-galerieslider">
+            <div class="m-grid-image">
+                <picture>
+                    <source data-variant="2xl" data-maxwidth="1600" media="(min-width: 1536px)"
+                            srcset="{f:uri.image(image: project.headerimage, maxWidth: '1700',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                    <source data-variant="xl" data-maxwidth="1300" media="(min-width: 1280px)"
+                            srcset="{f:uri.image(image: project.headerimage, maxWidth: '1400',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                    <source data-variant="lg" data-maxwidth="1100" media="(min-width: 1024px)"
+                            srcset="{f:uri.image(image: project.headerimage, maxWidth: '1100',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                    <source data-variant="md" data-maxwidth="800" media="(min-width: 768px)"
+                            srcset="{f:uri.image(image: project.headerimage, maxWidth: '800',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                    <source data-variant="sm" data-maxwidth="640"
+                            srcset="{f:uri.image(image: project.headerimage, maxWidth: '500',cropVariant:'mobile', fileExtension: 'webp')}" type="image/webp">
+                    <img class="m-slide__media"
+                         src="{f:uri.image(image: project.headerimage, cropVariant: 'desktop', maxWidth: 1900)}"
+                         title="{project.headerimage.title}"
+                         alt="{project.headerimage.title}"
+                         >
+                </picture>
+            </div>
+            <div class="m-grid-hover z-40">
+                <div class="bg-white md:py-8">
+                    <div class="p-4 md:pl-32 md:pr-8">
+                        <h1>
+                            <f:format.html parseFuncTSPath="lib.parseFunc">{project.title}</f:format.html>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-text md:flex">
+            <div class="p-4 w-full md:w-3/4 md:pl-32 md:pr-36">
+                <div class="m-text">
+                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{project.description}</f:format.html>
+                </div>
+            </div>
+            <div class="m-project-desc w-full p-4 md:p-0 md:w-1/4 mt-4 md:mt-12">
+                <f:if condition="{project.projectplanning}">
+                    <h4>Projektierung</h4>
+                    <div class="m-lead">{project.projectplanning}</div>
+                </f:if>
+                <f:if condition="{project.realization}">
+                    <h4>Realisierung</h4>
+                    <div class="m-lead">{project.realization}</div>
+                </f:if>
+                <f:if condition="{project.owner}">
+                    <h4>Auftraggeber:in</h4>
+                    <div class="m-lead">{project.owner}</div>
+                </f:if>
+                <f:if condition="{project.architect}">
+                    <h4>Architekt</h4>
+                    <div class="m-lead">{project.architect}</div>
+                </f:if>
+                <f:if condition="{project.partner}">
+                    <h4>Partner</h4>
+                    <div class="m-lead">{project.partner}</div>
+                </f:if>
+                <f:if condition="{project.award}">
+                    <h4>Auszeichnung</h4>
+                    <div class="m-lead">{project.award}</div>
+                </f:if>
+                <f:if condition="{project.copyright}">
+                    <h4>Foto ©</h4>
+                    <div class="m-lead">{project.copyright}</div>
+                </f:if>
+            </div>
+        </div>
+    </div>
+
+    <f:if condition="{project.images}">
+        <div class="m-project-galerieslider m-layout  my-10 md:mb-24 md:py-6">
+            <div class="p-4 md:p-0 w-full md:w-3/4 md:pl-32 md:pr-36">
+                <div class="swiper swiper-container swiper-container__fixheight w-full">
+                    <div class="swiper-wrapper w-1/2">
+                        <f:for each="{project.images}" as="slide">
+                            <div class="m-slide swiper-slide flex justify-center">
+                                <f:if condition="{slide}">
+                                    <f:then>
+                                        <f:variable name="sliderImg">{slide}</f:variable>
+                                        <picture>
+                                            <source data-variant="lg" data-maxwidth="1100" media="(min-width: 1024px)"
+                                                    srcset="{f:uri.image(image: sliderImg, maxHeight: '600',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                                            <source data-variant="md" data-maxwidth="800" media="(min-width: 768px)"
+                                                    srcset="{f:uri.image(image: sliderImg, maxHeight: '430',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                                            <source data-variant="sm" data-maxwidth="640"
+                                                    srcset="{f:uri.image(image: sliderImg, maxHeight: '230',cropVariant:'desktop', fileExtension: 'webp')}" type="image/webp">
+                                            <img class="m-slide__media"
+                                                 src="{f:uri.image(image: sliderImg, cropVariant: 'desktop', maxWidth: 900)}"
+                                                 title="{sliderImg.title}"
+                                                 alt="{sliderImg.title}"
+                                                 >
+                                        </picture>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </f:for>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+    <div class="m-project-navigation m-layout p-4 py-6 my-10 md:mb-24 flex justify-center ">
+        <div class="flex justify-between md:justify-center w-full">
+            <f:if condition="{prev}">
+                <div class="backward">
+                    <f:link.action pageUid="70" action="show" arguments="{project : '{prev}'}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50.42" height="37.594"
+                             viewBox="0 0 50.42 37.594">
+                            <g id="Gruppe_26" data-name="Gruppe 26"
+                               transform="translate(1799.249 2148.266) rotate(180)">
+                                <line class="svgline" data-name="Linie 6" x1="45.021"
+                                      transform="translate(1750.83 2129.469)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                                <line class="svgline" data-name="Linie 8" x1="15.969" y1="15.969"
+                                      transform="translate(1780.452 2113.5)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                                <line class="svgline" data-name="Linie 9" x1="15.969" y2="15.969"
+                                      transform="translate(1780.452 2129.469)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                            </g>
+                        </svg>
+                    </f:link.action>
+                </div>
+            </f:if>
+
+            <div class="all m-h2 hover:text-black">
+                <f:link.action pageUid="26">Alle Projekte</f:link.action>
+            </div>
+
+            <f:if condition="{next}">
+                <div class="forward">
+                    <f:link.action pageUid="70" action="show" arguments="{project : '{next}'}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50.42" height="37.594"
+                             viewBox="0 0 50.42 37.594">
+                            <g id="Gruppe_14" data-name="Gruppe 14" transform="translate(-1748.83 -2110.672)">
+                                <line class="svgline" data-name="Linie 6" x1="45.021"
+                                      transform="translate(1750.83 2129.469)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                                <line class="svgline" data-name="Linie 8" x1="15.969" y1="15.969"
+                                      transform="translate(1780.452 2113.5)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                                <line class="svgline" data-name="Linie 9" x1="15.969" y2="15.969"
+                                      transform="translate(1780.452 2129.469)" fill="none" stroke="#79838c"
+                                      stroke-linecap="round" stroke-width="4"/>
+                            </g>
+                        </svg>
+                    </f:link.action>
+                </div>
+            </f:if>
+
+        </div>
+    </div>
+
+</f:section>
+</html>

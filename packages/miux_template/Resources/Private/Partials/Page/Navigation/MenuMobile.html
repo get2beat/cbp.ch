@@ -1,0 +1,45 @@
+<div class="xl:hidden">
+
+    <div id="hamburger-open" class="m-hamburger open md:hidden">
+        <svg id="Komponente_12_13" data-name="Komponente 12 – 13" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+            <circle id="Ellipse_1" data-name="Ellipse 1" cx="33" cy="33" r="33" fill="#41464b"/>
+            <line id="Linie_1" data-name="Linie 1" x2="30" transform="translate(18 24)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+            <line id="Linie_2" data-name="Linie 2" x2="30" transform="translate(18 33)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+            <line id="Linie_3" data-name="Linie 3" x2="30" transform="translate(18 42)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+        </svg>
+    </div>
+
+    <nav id="menu-mobile" class="m-navigation-overlay absolute z-50 top-0 left-0 color-mittel" style="display:none">
+        <div class="m-inner flex justify-center items-center h-full">
+            <ul>
+                <f:for each="{mainnavigation}" as="mainnavigationItem">
+                    <f:if condition="{mainnavigationItem.active}">
+                        <f:then>
+                            <li class="Selected py-4" ><a class="border-b-3" href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">{mainnavigationItem.title}</a></li>
+                        </f:then>
+                        <f:else>
+                            <li class="py-4"><a href="{mainnavigationItem.link}" class="" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">{mainnavigationItem.title}</a></li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+                <li id="m-contact-mobile" class="py-4">
+                    <div >Kontakt</div>
+                </li>
+                <li class="h-16">
+                    &nbsp;
+                </li>
+            </ul>
+            <div id="hamburger-close" class="m-hamburger close md:hidden" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+                    <g id="Gruppe_3" data-name="Gruppe 3" transform="translate(-284 -653)">
+                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="33" cy="33" r="33" transform="translate(284 653)" fill="#41464b"/>
+                        <g id="Gruppe_14" data-name="Gruppe 14" transform="translate(573.68 -2057.378) rotate(45)">
+                            <line id="Linie_5" data-name="Linie 5" y2="32.723" transform="translate(1758.361 2105)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+                            <line id="Linie_6" data-name="Linie 6" x1="32.723" transform="translate(1742 2121.361)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </nav>
+</div>

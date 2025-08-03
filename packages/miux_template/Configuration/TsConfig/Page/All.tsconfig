@@ -1,0 +1,20 @@
+#
+# PageTS for miux_template
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:miux_template/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:miux_template/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:miux_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:miux_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+
+mod.web_layout {
+    tt_content {
+        preview {
+            # Your CType
+            modul_text = EXT:miux_template/Resources/Private/Backend/Templates/Text.html
+            modul_header = EXT:miux_template/Resources/Private/Backend/Templates/Header.html
+            modul_accordion = EXT:miux_template/Resources/Private/Backend/Templates/Accordion.html
+            modul_topslider = EXT:miux_template/Resources/Private/Backend/Templates/TopSlider.html
+            modul_trennlinie = EXT:miux_template/Resources/Private/Backend/Templates/Trennlinie.html
+        }
+    }
+}

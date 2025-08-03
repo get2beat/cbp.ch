@@ -1,0 +1,105 @@
+base: '%env(T3_MAIN_URL)%'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=10'
+  -
+    errorCode: 500
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=11'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_CH.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-CH
+    direction: ltr
+    flag: ch
+    websiteTitle: ''
+rootPageId: 1
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      -
+        routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+      -
+        routePath: '/{category-name}'
+        _controller: 'News::list'
+        _arguments:
+          category-name: overwriteDemand/categories
+      -
+        routePath: '/{tag-name}'
+        _controller: 'News::list'
+        _arguments:
+          tag-name: overwriteDemand/tags
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      news-title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+      category-name:
+        type: PersistedAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+      tag-name:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_tag
+        routeFieldName: slug
+  Project:
+    type: Extbase
+    extension: Projects
+    plugin: Project
+    routes:
+      -
+        routePath: '/{project}'
+        _controller: 'Project::show'
+        _arguments:
+          project-title: project
+    defaultController: 'Project::list'
+    defaults:
+      page: '0'
+    aspects:
+      project-title:
+        type: PersistedAliasMapper
+        tableName: tx_projects_domain_model_project
+        routeFieldName: urlsegment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+routes:
+  -
+    route: sitemap.xml
+    type: uri
+    source: 'https://cbp.ch/?type=1533906435'
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /_assets/\r\nAllow: /typo3temp/\r\n\r\n# Don't index the search folder\r\nDisallow: /search/*\r\n\r\n# parameters\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\nSitemap: https://cbp.ch/sitemap.xml\r\n"
+settings:
+  newsstoragePid: 43
+websiteTitle: '%env(T3_MAIN_SITENAME)%'

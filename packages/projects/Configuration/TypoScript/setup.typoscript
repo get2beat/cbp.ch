@@ -1,0 +1,114 @@
+
+plugin.tx_projects_list {
+    view {
+        templateRootPaths.0 = EXT:projects/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_projects_project.view.templateRootPath}
+        partialRootPaths.0 = EXT:projects/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_projects_project.view.partialRootPath}
+        layoutRootPaths.0 = EXT:projects/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_projects_project.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_projects_project.persistence.storagePid}
+        recursive = 2
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+        # Should be on by default, but can be disabled if all action in the plugin are uncached
+        requireCHashArgumentForActionArguments = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+    settings {
+        typeNum = {$plugin.tx_projects_project.settings.typeNum}
+    }
+}
+plugin.tx_projects_show < plugin.tx_projects_list
+
+
+projectajax_page = PAGE
+projectajax_page {
+    typeNum = 8021
+        10 = USER
+        10.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        10.extensionName= Projects
+        10.pluginName = list
+        10.vendorName = Miux
+
+       config {
+          disableAllHeaderCode = 1
+          additionalHeaders = Content-type:application/json
+          xhtml_cleaning = 0
+          debug = 0
+          no_cache = 0
+          admPanel = 0
+       }
+}
+
+
+
+config.recordLinks {
+  tx_projects {
+    typolink {
+      ###detailPid eintragen###
+      parameter = 70
+      additionalParams.data = field:uid
+      additionalParams.wrap = &tx_projects_show[controller]=Project&tx_projects_show[action]=show&tx_projects_show[project]=|
+      useCacheHash = 1
+      ATagParams.data = parameters:allParams
+      target.data = parameters:target
+      title.data = parameters:title
+      extTarget = _blank
+      extTarget.override.data = parameters:target
+    }
+    forceLink = 1
+  }
+}
+
+
+lib.getProjectImageUid = COA
+lib.getProjectImageUid {
+  10 = RECORDS
+  10.tables = tx_projects_domain_model_project
+  10.source.data = current:1
+  10.source.intval = 1
+  10.dontCheckPid = 1
+  10.conf.tx_projects_domain_model_project = COA
+  10.conf.tx_projects_domain_model_project {
+    10 = FILES
+    10 {
+      required = 1
+      references {
+        table = tx_projects_domain_model_project
+        fieldName = listimage
+      }
+      renderObj = TEXT
+      renderObj {
+        stdWrap.data = file:current:uid
+      }
+    }
+  }
+}
+
+config.pageTitleProviders {
+   record {
+      provider = TYPO3\CMS\Core\PageTitle\RecordPageTitleProvider
+   }
+   seo {
+      provider = TYPO3\CMS\Seo\PageTitle\SeoTitlePageTitleProvider
+      before = record
+   }
+   produkteprojekte {
+      provider = Miux\Projects\PageTitle\MyRecordTitleProvider
+      before = record,seo
+   }
+}
+
+# Robots: allow indexing of news records, but set ‘noindex’ to the detail page
+[traverse(request.getQueryParams(), 'tx_projects_project/show') > 0]
+    page.meta.robots = index,follow
+    page.meta.robots.replace = 1
+[global]

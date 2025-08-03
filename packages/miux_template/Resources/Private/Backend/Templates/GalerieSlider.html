@@ -1,0 +1,21 @@
+<f:if condition="{data.tx_modul_showtitle}">
+    <f:if condition="{data.tx_modul_h1}">
+        <f:then>
+            <h1 class="text-red-500">
+                <f:sanitize.html >{data.header} (H1)</f:sanitize.html>
+            </h1>
+        </f:then>
+        <f:else>
+            <h2 class="">
+                <f:sanitize.html >{data.header}</f:sanitize.html>
+            </h2>
+        </f:else>
+    </f:if>
+</f:if>
+<div class="p-6 mx-auto flex justify-center" style="{f:if(condition: '{data.tx_modul_backgroundcolor} == \'color-dunkel\'', then:'color:white; background-color: #111b2b;')}">
+    <f:for each="{data.tx_modul_bild}" as="slide">
+        <div class="p-2">
+            <f:media file="{slide}" width="200" />
+        </div>
+    </f:for>
+</div>

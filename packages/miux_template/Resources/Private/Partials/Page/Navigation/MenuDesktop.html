@@ -1,0 +1,16 @@
+
+<div id="menu-desktop" class="">
+    <nav class="m-mainnav flex justify-between items-end md:items-start">
+        <ul class="hidden md:block absolute md:static md:flex md:pt-6 top-auto md:top-auto text-center md:text-left left-0 right-0 h-auto scale-0 md:scale-100 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" id="menu">
+            <f:for each="{mainnavigation}" as="mainnavigationItem">
+                <li class="m-mainnav__item mt-8 md:mt-0 md:pl-6 relative">
+                      <a class="m-menu__item-link pb-1 md:ml-7 {f:if(condition:mainnavigationItem.active, then: 'active',else: 'hover:text-black')} " href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">{mainnavigationItem.title}</a>
+                </li>
+            </f:for>
+            <li id="m-contact" class="m-mainnav__item mt-8 md:mt-0 md:pl-6 relative">
+                <div class="m-menu__item-link pb-1 md:ml-7 hover:text-black">Kontakt</div>
+            </li>
+        </ul>
+    </nav>
+</div>
+
