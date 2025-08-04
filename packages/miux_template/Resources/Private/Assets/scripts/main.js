@@ -89,8 +89,7 @@ $(function() {
             },
             on: {
                 slideChange: function (swiper) {
-                    $(swiper.slides.eq(swiper.previousIndex)).find('.m-slide__link').hide();
-                    $(swiper.slides.eq(swiper.activeIndex)).find('.m-slide__link').show();
+                    //$(swiper.slides(swiper.activeIndex)).find('.m-slide__link').show();
                 },
                 init: function (swiper) {
                     if (swiper.slides.length <= 1) {
@@ -215,7 +214,7 @@ $(function() {
                 preloadImages: false,
                 on: {
                     slideChange: function (swiper) {
-                        $(swiper.slides[swiper.activeIndex]).find('.m-slide__link').show();
+                        //$(swiper.slides[swiper.activeIndex]).find('.m-slide__link').show();
                     },
                     init: function (swiper) {
                         if (swiper.slides.length <= 1) {
