@@ -31,7 +31,7 @@ return [
         --div--;Bilderkarusell,
             images,
         --div--;Eigenschaften,
-             services, owner, architect,
+             projectplanning,realization, owner, architect,partner,award,copyright,
         --div--;Bereich,
              area,
         '],
