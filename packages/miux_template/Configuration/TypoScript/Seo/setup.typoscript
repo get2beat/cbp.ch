@@ -103,4 +103,8 @@ plugin.tx_seo {
             }
     }
 [global]
-
+# Robots: allow indexing of news records, but set ‘noindex’ to the detail page
+[traverse(request.getQueryParams(), 'tx_projects_show/project') > 0]
+    page.meta.robots = index,follow
+    page.meta.robots.replace = 1
+[global]
